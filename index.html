@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE PARFUM - عطور فاخرة</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <img src="./WhatsApp Image 2025-10-22 at 00.11.54_770256b7.jpg"/>
+            </div>
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+            </div>
+            <p class="loading-text">جاري التحميل...</p>
+        </div>
+    </div>
+    
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="./WhatsApp Image 2025-10-22 at 00.11.54_770256b7.jpg"/>
+                </div>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link active">الرئيسية</a></li>
+                        <li><a href="products.html" class="nav-link">المنتجات</a></li>
+                        <li><a href="#special-offers" class="nav-link">عروض خاصة</a></li>
+                        <li><a href="#featured-products" class="nav-link">منتجات مميزة</a></li>
+                        <li><a href="#categories" class="nav-link">الفئات</a></li>
+                        <li><a href="about.html" class="nav-link">من نحن</a></li>
+                        <li><a href="contact.html" class="nav-link">تواصل معنا</a></li>
+                        <li><a href="login.html" class="nav-link">تسجيل الدخول</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="theme-selector">
+                        <button class="theme-main-btn" id="themeMainBtn" title="تغيير المظهر">
+                            <span class="theme-icon" id="currentThemeIcon">💻</span>
+                        </button>
+                        <div class="theme-dropdown" id="themeDropdown">
+                            <button class="theme-option" data-theme="dark">
+                                <span class="theme-icon">🌙</span>
+                                <span>الوضع الداكن</span>
+                            </button>
+                            <button class="theme-option" data-theme="light">
+                                <span class="theme-icon">☀️</span>
+                                <span>الوضع الفاتح</span>
+                            </button>
+                            <button class="theme-option" data-theme="device">
+                                <span class="theme-icon">💻</span>
+                                <span>وضع الجهاز</span>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="lang-toggle" id="langToggle">EN</button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-slider" id="heroSlider">
+        <div class="slider-container">
+            <div class="slide active" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1541643600914-78b084683601?w=1920') center/cover;">
+                <div class="slide-content">
+                    <h2 class="slide-title">عطور فاخرة من باريس</h2>
+                    <p class="slide-text">اكتشف عالم الرقي والأناقة</p>
+                    <a href="products.html" class="btn btn-primary">تسوق الآن</a>
+                </div>
+            </div>
+            <div class="slide" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=1920') center/cover;">
+                <div class="slide-content">
+                    <h2 class="slide-title">مجموعة توم فورد الحصرية</h2>
+                    <p class="slide-text">تميز برائحة لا تُنسى</p>
+                    <a href="products.html" class="btn btn-primary">اكتشف المزيد</a>
+                </div>
+            </div>
+            <div class="slide" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1588405748880-12d1d2a59d75?w=1920') center/cover;">
+                <div class="slide-content">
+                    <h2 class="slide-title">عطور شرقية أصيلة</h2>
+                    <p class="slide-text">رحلة عبر الروائح الساحرة</p>
+                    <a href="products.html" class="btn btn-primary">استكشف الآن</a>
+                </div>
+            </div>
+        </div>
+        <button class="slider-btn prev" id="prevSlide">‹</button>
+        <button class="slider-btn next" id="nextSlide">›</button>
+        <div class="slider-dots" id="sliderDots"></div>
+    </section>
+
+    <section class="categories" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">استكشف الفئات</h2>
+                <p class="section-subtitle">اختر من مجموعة متنوعة من العطور الفاخرة</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" data-aos="fade-up">
+                    <div class="category-image" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=600') center/cover;"></div>
+                    <div class="category-content">
+                        <h3>عطور رجالية</h3>
+                        <p>قوة وجاذبية</p>
+                        <a href="products.html?category=men" class="category-link">تسوق الآن</a>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-image" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1594035910387-fea47794261f?w=600') center/cover;"></div>
+                    <div class="category-content">
+                        <h3>عطور نسائية</h3>
+                        <p>أنوثة وسحر</p>
+                        <a href="products.html?category=women" class="category-link">تسوق الآن</a>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-image" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=600') center/cover;"></div>
+                    <div class="category-content">
+                        <h3>للجنسين</h3>
+                        <p>عطور عصرية</p>
+                        <a href="products.html?category=unisex" class="category-link">تسوق الآن</a>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-image" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=600') center/cover;"></div>
+                    <div class="category-content">
+                        <h3>عطور شرقية</h3>
+                        <p>أصالة وتراث</p>
+                        <a href="products.html?category=oriental" class="category-link">تسوق الآن</a>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="category-image" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1528821128474-27f963b062bf?w=600') center/cover;"></div>
+                    <div class="category-content">
+                        <h3>عطور فرنسية</h3>
+                        <p>فخامة باريسية</p>
+                        <a href="products.html?category=french" class="category-link">تسوق الآن</a>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="category-image" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=600') center/cover;"></div>
+                    <div class="category-content">
+                        <h3>عطور خشبية</h3>
+                        <p>دفء وعمق</p>
+                        <a href="products.html?category=woody" class="category-link">تسوق الآن</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section class="special-offers" id="special-offers">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">عروض خاصة</h2>
+                <p class="section-subtitle">عروض حصرية لفترة محدودة</p>
+            </div>
+            <div class="offers-grid">
+                <div class="offer-card" data-aos="fade-up">
+                    <div class="offer-badge">خصم 40%</div>
+                    <div class="offer-image" style="background: url('https://images.unsplash.com/photo-1541643600914-78b084683601?w=400') center/cover;"></div>
+                    <div class="offer-content">
+                        <h3 class="offer-name">عرض الأسبوع</h3>
+                        <p class="offer-description">اشتري 2 واحصل على الثالث مجاناً</p>
+                        <div class="offer-price">
+                            <span class="old-price">2,000 ر.س</span>
+                            <span class="new-price">1,200 ر.س</span>
+                        </div>
+                        <div class="offer-timer" style="background: rgba(212, 175, 55, 0.1); padding: 15px; border-radius: 10px; margin: 15px 0; text-align: center;">
+                            <div style="color: var(--primary-gold); font-weight: 700; font-size: 14px; margin-bottom: 5px;">ينتهي العرض خلال:</div>
+                            <div style="display: flex; gap: 10px; justify-content: center; font-weight: 700; font-size: 18px;">
+                                <div><span style="color: var(--primary-gold);">2</span> يوم</div>
+                                <div><span style="color: var(--primary-gold);">14</span> ساعة</div>
+                                <div><span style="color: var(--primary-gold);">32</span> دقيقة</div>
+                            </div>
+                        </div>
+                        <a href="products.html" class="btn btn-primary" style="width: 100%;">تسوق الآن</a>
+                    </div>
+                </div>
+                <div class="offer-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="offer-badge">خصم 30%</div>
+                    <div class="offer-image" style="background: url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400') center/cover;"></div>
+                    <div class="offer-content">
+                        <h3 class="offer-name">عرض العطور النسائية</h3>
+                        <p class="offer-description">خصم على جميع العطور النسائية</p>
+                        <div class="offer-price">
+                            <span class="old-price">1,800 ر.س</span>
+                            <span class="new-price">1,260 ر.س</span>
+                        </div>
+                        <div class="offer-timer" style="background: rgba(212, 175, 55, 0.1); padding: 15px; border-radius: 10px; margin: 15px 0; text-align: center;">
+                            <div style="color: var(--primary-gold); font-weight: 700; font-size: 14px; margin-bottom: 5px;">ينتهي العرض خلال:</div>
+                            <div style="display: flex; gap: 10px; justify-content: center; font-weight: 700; font-size: 18px;">
+                                <div><span style="color: var(--primary-gold);">5</span> يوم</div>
+                                <div><span style="color: var(--primary-gold);">8</span> ساعة</div>
+                                <div><span style="color: var(--primary-gold);">45</span> دقيقة</div>
+                            </div>
+                        </div>
+                        <a href="products.html" class="btn btn-primary" style="width: 100%;">تسوق الآن</a>
+                    </div>
+                </div>
+                <div class="offer-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="offer-badge">خصم 50%</div>
+                    <div class="offer-image" style="background: url('https://images.unsplash.com/photo-1588405748880-12d1d2a59d75?w=400') center/cover;"></div>
+                    <div class="offer-content">
+                        <h3 class="offer-name">عرض نهاية الموسم</h3>
+                        <p class="offer-description">تخفيضات كبرى على مجموعة مختارة</p>
+                        <div class="offer-price">
+                            <span class="old-price">2,400 ر.س</span>
+                            <span class="new-price">1,200 ر.س</span>
+                        </div>
+                        <div class="offer-timer" style="background: rgba(212, 175, 55, 0.1); padding: 15px; border-radius: 10px; margin: 15px 0; text-align: center;">
+                            <div style="color: var(--primary-gold); font-weight: 700; font-size: 14px; margin-bottom: 5px;">ينتهي العرض خلال:</div>
+                            <div style="display: flex; gap: 10px; justify-content: center; font-weight: 700; font-size: 18px;">
+                                <div><span style="color: var(--primary-gold);">1</span> يوم</div>
+                                <div><span style="color: var(--primary-gold);">6</span> ساعة</div>
+                                <div><span style="color: var(--primary-gold);">18</span> دقيقة</div>
+                            </div>
+                        </div>
+                        <a href="products.html" class="btn btn-primary" style="width: 100%;">تسوق الآن</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-products" id="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">منتجات مميزة</h2>
+                <p class="section-subtitle">اختيارنا الخاص من أفخر العطور</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="zoom-in">
+                    <div class="product-badge">جديد</div>
+                    <div class="product-image" style="background: url('https://images.unsplash.com/photo-1541643600914-78b084683601?w=400') center/cover;"></div>
+                    <div class="product-content">
+                        <h3 class="product-name">Noir Élégance</h3>
+                        <p class="product-category">عطر رجالي فاخر</p>
+                        <div class="product-rating">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">1,200 ر.س</span>
+                            <a href="product-details.html?id=1" class="btn btn-secondary">عرض التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="product-badge">الأكثر مبيعاً</div>
+                    <div class="product-image" style="background: url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400') center/cover;"></div>
+                    <div class="product-content">
+                        <h3 class="product-name">Rose Mystique</h3>
+                        <p class="product-category">عطر نسائي راقي</p>
+                        <div class="product-rating">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">1,500 ر.س</span>
+                            <a href="product-details.html?id=2" class="btn btn-secondary">عرض التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="product-badge">حصري</div>
+                    <div class="product-image" style="background: url('https://images.unsplash.com/photo-1588405748880-12d1d2a59d75?w=400') center/cover;"></div>
+                    <div class="product-content">
+                        <h3 class="product-name">Oud Royal</h3>
+                        <p class="product-category">عطر شرقي أصيل</p>
+                        <div class="product-rating">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">2,000 ر.س</span>
+                            <a href="product-details.html?id=3" class="btn btn-secondary">عرض التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="exclusive-online">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">حصري على المتجر الإلكتروني</h2>
+                <p class="section-subtitle">منتجات متوفرة فقط على الموقع</p>
+            </div>
+            <div class="exclusive-grid">
+                <div class="exclusive-card" data-aos="zoom-in">
+                    <div class="exclusive-badge">حصري</div>
+                    <div class="exclusive-image" style="background: url('https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=400') center/cover;"></div>
+                    <div class="exclusive-content">
+                        <h3>Limited Edition Oud</h3>
+                        <p>إصدار محدود - 100 قطعة فقط</p>
+                        <div class="exclusive-features">
+                            <span>✓ تغليف فاخر حصري</span>
+                            <span>✓ شهادة أصالة مرقمة</span>
+                            <span>✓ توصيل مجاني</span>
+                        </div>
+                        <div class="exclusive-footer">
+                            <span class="exclusive-price">2,500 ر.س</span>
+                            <a href="product-details.html" class="btn btn-gold">اطلب الآن</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="exclusive-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="exclusive-badge">حصري</div>
+                    <div class="exclusive-image" style="background: url('https://images.unsplash.com/photo-1528821128474-27f963b062bf?w=400') center/cover;"></div>
+                    <div class="exclusive-content">
+                        <h3>Signature Collection</h3>
+                        <p>مجموعة التوقيع الخاصة</p>
+                        <div class="exclusive-features">
+                            <span>✓ 3 عطور فاخرة</span>
+                            <span>✓ علبة هدايا فخمة</span>
+                            <span>✓ بطاقة تهنئة مخصصة</span>
+                        </div>
+                        <div class="exclusive-footer">
+                            <span class="exclusive-price">3,200 ر.س</span>
+                            <a href="product-details.html" class="btn btn-gold">اطلب الآن</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="exclusive-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="exclusive-badge">حصري</div>
+                    <div class="exclusive-image" style="background: url('https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=400') center/cover;"></div>
+                    <div class="exclusive-content">
+                        <h3>VIP Membership</h3>
+                        <p>عضوية VIP السنوية</p>
+                        <div class="exclusive-features">
+                            <span>✓ خصم 25% دائم</span>
+                            <span>✓ شحن مجاني دائماً</span>
+                            <span>✓ عروض حصرية</span>
+                        </div>
+                        <div class="exclusive-footer">
+                            <span class="exclusive-price">1,500 ر.س/سنة</span>
+                            <a href="product-details.html" class="btn btn-gold">اشترك الآن</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="best-sellers">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">الأكثر مبيعاً</h2>
+                <p class="section-subtitle">العطور المفضلة لدى عملائنا</p>
+            </div>
+            <div class="bestsellers-grid">
+                <div class="bestseller-item" data-aos="fade-right">
+                    <div class="bestseller-rank">#1</div>
+                    <div class="bestseller-image" style="background: url('https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=500') center/cover;"></div>
+                    <div class="bestseller-content">
+                        <h3>Oud Imperial</h3>
+                        <p>عطر شرقي فاخر بلمسات العود الطبيعي</p>
+                        <span class="price">1,800 ر.س</span>
+                        <a href="product-details.html?id=7" class="btn btn-gold">اشتري الآن</a>
+                    </div>
+                </div>
+                <div class="bestseller-item" data-aos="fade-right" data-aos-delay="100">
+                    <div class="bestseller-rank">#2</div>
+                    <div class="bestseller-image" style="background: url('https://images.unsplash.com/photo-1528821128474-27f963b062bf?w=500') center/cover;"></div>
+                    <div class="bestseller-content">
+                        <h3>Chanel Prestige</h3>
+                        <p>أيقونة الأناقة الفرنسية</p>
+                        <span class="price">2,200 ر.س</span>
+                        <a href="product-details.html?id=8" class="btn btn-gold">اشتري الآن</a>
+                    </div>
+                </div>
+                <div class="bestseller-item" data-aos="fade-right" data-aos-delay="200">
+                    <div class="bestseller-rank">#3</div>
+                    <div class="bestseller-image" style="background: url('https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=500') center/cover;"></div>
+                    <div class="bestseller-content">
+                        <h3>Tobacco Vanille</h3>
+                        <p>عطر دافئ بلمسات التبغ والفانيليا</p>
+                        <span class="price">1,650 ر.س</span>
+                        <a href="product-details.html?id=9" class="btn btn-gold">اشتري الآن</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="new-arrivals">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">وصل حديثاً</h2>
+                <p class="section-subtitle">أحدث إصداراتنا من العطور الفاخرة</p>
+            </div>
+            <div class="arrivals-grid">
+                <div class="arrival-card" data-aos="flip-left">
+                    <div class="arrival-image" style="background: url('https://images.unsplash.com/photo-1541643600914-78b084683601?w=350') center/cover;">
+                        <span class="new-badge">جديد</span>
+                    </div>
+                    <h3>Midnight Oud</h3>
+                    <p>1,400 ر.س</p>
+                </div>
+                <div class="arrival-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="arrival-image" style="background: url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=350') center/cover;">
+                        <span class="new-badge">جديد</span>
+                    </div>
+                    <h3>Floral Paradise</h3>
+                    <p>1,250 ر.س</p>
+                </div>
+                <div class="arrival-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="arrival-image" style="background: url('https://images.unsplash.com/photo-1588405748880-12d1d2a59d75?w=350') center/cover;">
+                        <span class="new-badge">جديد</span>
+                    </div>
+                    <h3>Citrus Breeze</h3>
+                    <p>1,150 ر.س</p>
+                </div>
+                <div class="arrival-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="arrival-image" style="background: url('https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=350') center/cover;">
+                        <span class="new-badge">جديد</span>
+                    </div>
+                    <h3>Leather & Spice</h3>
+                    <p>1,550 ر.س</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">أسئلة شائعة</h2>
+                <p class="section-subtitle">كل ما تحتاج معرفته عن عطورنا</p>
+            </div>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item" data-aos="fade-up">
+                    <button class="accordion-header">
+                        <span>كيف أختار العطر المناسب لي؟</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>اختيار العطر المناسب يعتمد على شخصيتك والمناسبة. ننصح بتجربة العطر على البشرة وانتظار 30 دقيقة لتقييم الرائحة الحقيقية.</p>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                    <button class="accordion-header">
+                        <span>ما هي مدة بقاء العطر؟</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>عطورنا الفاخرة تدوم من 8 إلى 12 ساعة حسب نوع العطر وتركيزه. العطور الشرقية والخشبية عادة ما تدوم لفترة أطول.</p>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                    <button class="accordion-header">
+                        <span>هل المنتجات أصلية 100%؟</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>نعم، جميع منتجاتنا أصلية 100% ومستوردة مباشرة من الشركات المصنعة. نقدم ضمان الأصالة مع كل منتج.</p>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                    <button class="accordion-header">
+                        <span>ما هي سياسة الاسترجاع؟</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>نوفر سياسة استرجاع مرنة خلال 14 يوم من تاريخ الشراء للمنتجات غير المفتوحة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">آراء العملاء</h2>
+                <p class="section-subtitle">ما يقوله عملاؤنا عن تجربتهم</p>
+            </div>
+            <div class="testimonials-slider" id="testimonialsSlider">
+                <div class="testimonial-item active">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text">تجربة رائعة! العطور أصلية والتغليف فاخر جداً. خدمة العملاء ممتازة والتوصيل سريع.</p>
+                        <div class="testimonial-author">
+                            <div class="author-image" style="background: url('https://i.pravatar.cc/150?img=1') center/cover;"></div>
+                            <div class="author-info">
+                                <h4>سارة أحمد</h4>
+                                <p>الرياض، السعودية</p>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text">أفضل متجر عطور تعاملت معه. التشكيلة واسعة والأسعار منافسة.</p>
+                        <div class="testimonial-author">
+                            <div class="author-image" style="background: url('https://i.pravatar.cc/150?img=12') center/cover;"></div>
+                            <div class="author-info">
+                                <h4>محمد العتيبي</h4>
+                                <p>جدة، السعودية</p>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text">مجموعة العطور النسائية رائعة! Rose Mystique أصبح عطري المفضل.</p>
+                        <div class="testimonial-author">
+                            <div class="author-image" style="background: url('https://i.pravatar.cc/150?img=5') center/cover;"></div>
+                            <div class="author-info">
+                                <h4>نورة السالم</h4>
+                                <p>دبي، الإمارات</p>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <button class="testimonial-prev">‹</button>
+                <button class="testimonial-next">›</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">لماذا تختارنا</h2>
+                <p class="section-subtitle">مميزات تجعلنا الخيار الأفضل</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">🚚</div>
+                    <h3>شحن مجاني</h3>
+                    <p>توصيل مجاني لجميع الطلبات فوق 500 ريال</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">🎁</div>
+                    <h3>تغليف فاخر</h3>
+                    <p>كل منتج يأتي بتغليف فاخر جاهز للإهداء</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">💬</div>
+                    <h3>دعم عملاء</h3>
+                    <p>فريق متخصص متاح 24/7 لمساعدتك</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">✓</div>
+                    <h3>ضمان الجودة</h3>
+                    <p>منتجات أصلية 100% مع ضمان الاسترجاع</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content" data-aos="zoom-in">
+                <h2>اشترك في نشرتنا البريدية</h2>
+                <p>احصل على آخر العروض والإصدارات الجديدة</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit" class="btn btn-primary">اشترك الآن</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LUXE PARFUM</h3>
+                    <p>عالم من العطور الفاخرة والأناقة الراقية</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">📱</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="products.html">المنتجات</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>خدمة العملاء</h4>
+                    <ul>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                        <li><a href="#">سياسة الاسترجاع</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li>📞 +966 50 123 4567</li>
+                        <li>✉️ info@luxeparfum.com</li>
+                        <li>📍 الرياض، المملكة العربية السعودية</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LUXE PARFUM. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

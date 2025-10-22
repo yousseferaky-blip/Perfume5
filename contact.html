@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا - LUXE PARFUM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>LUXE PARFUM</h1>
+                    <span class="logo-subtitle">Maison de Parfum</span>
+                </div>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+                        <li><a href="products.html" class="nav-link">المنتجات</a></li>
+                        <li><a href="index.html#categories" class="nav-link">الفئات</a></li>
+                        <li><a href="about.html" class="nav-link">من نحن</a></li>
+                        <li><a href="contact.html" class="nav-link active">تواصل معنا</a></li>
+                        <li><a href="login.html" class="nav-link">تسجيل الدخول</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="lang-toggle" id="langToggle">EN</button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section style="margin-top: 80px; padding: 100px 0; background: linear-gradient(135deg, var(--dark-gray), var(--black)); color: var(--white); text-align: center;">
+        <div class="container">
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 64px; margin-bottom: 20px; color: var(--primary-gold);" data-aos="fade-up">تواصل معنا</h1>
+            <p style="font-size: 20px; max-width: 700px; margin: 0 auto; opacity: 0.9;" data-aos="fade-up" data-aos-delay="100">نحن هنا لمساعدتك في أي استفسار</p>
+        </div>
+    </section>
+
+    <section style="padding: 100px 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
+                <div data-aos="fade-right">
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 30px; color: var(--dark-gray);">أرسل لنا رسالة</h2>
+                    <form id="contactForm" style="display: flex; flex-direction: column; gap: 20px;">
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark-gray);">الاسم الكامل *</label>
+                            <input type="text" name="name" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 16px; transition: var(--transition);" onfocus="this.style.borderColor='var(--primary-gold)'" onblur="this.style.borderColor='#e0e0e0'">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark-gray);">البريد الإلكتروني *</label>
+                            <input type="email" name="email" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 16px; transition: var(--transition);" onfocus="this.style.borderColor='var(--primary-gold)'" onblur="this.style.borderColor='#e0e0e0'">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark-gray);">رقم الهاتف</label>
+                            <input type="tel" name="phone" style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 16px; transition: var(--transition);" onfocus="this.style.borderColor='var(--primary-gold)'" onblur="this.style.borderColor='#e0e0e0'">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark-gray);">الموضوع *</label>
+                            <select name="subject" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 16px; transition: var(--transition);" onfocus="this.style.borderColor='var(--primary-gold)'" onblur="this.style.borderColor='#e0e0e0'">
+                                <option value="">اختر الموضوع</option>
+                                <option value="استفسار عام">استفسار عام</option>
+                                <option value="استفسار عن منتج">استفسار عن منتج</option>
+                                <option value="شكوى">شكوى</option>
+                                <option value="اقتراح">اقتراح</option>
+                                <option value="طلب شراكة">طلب شراكة</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark-gray);">الرسالة *</label>
+                            <textarea name="message" required rows="6" style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 16px; resize: vertical; transition: var(--transition);" onfocus="this.style.borderColor='var(--primary-gold)'" onblur="this.style.borderColor='#e0e0e0'"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 18px; font-size: 16px;">إرسال الرسالة</button>
+                    </form>
+                </div>
+
+                <div data-aos="fade-left">
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 30px; color: var(--dark-gray);">معلومات التواصل</h2>
+                    
+                    <div style="margin-bottom: 40px;">
+                        <div style="display: flex; align-items: start; gap: 20px; padding: 25px; background: var(--light-gray); border-radius: 15px; margin-bottom: 20px;">
+                            <div style="font-size: 32px; color: var(--primary-gold);">📍</div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--dark-gray);">العنوان</h3>
+                                <p style="color: #666; line-height: 1.6;">طريق الملك فهد، حي العليا<br>الرياض 12211<br>المملكة العربية السعودية</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: start; gap: 20px; padding: 25px; background: var(--light-gray); border-radius: 15px; margin-bottom: 20px;">
+                            <div style="font-size: 32px; color: var(--primary-gold);">📞</div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--dark-gray);">الهاتف</h3>
+                                <p style="color: #666; line-height: 1.6;">+966 50 123 4567<br>+966 11 234 5678</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: start; gap: 20px; padding: 25px; background: var(--light-gray); border-radius: 15px; margin-bottom: 20px;">
+                            <div style="font-size: 32px; color: var(--primary-gold);">✉️</div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--dark-gray);">البريد الإلكتروني</h3>
+                                <p style="color: #666; line-height: 1.6;">info@luxeparfum.com<br>support@luxeparfum.com</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: start; gap: 20px; padding: 25px; background: var(--light-gray); border-radius: 15px;">
+                            <div style="font-size: 32px; color: var(--primary-gold);">🕐</div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--dark-gray);">ساعات العمل</h3>
+                                <p style="color: #666; line-height: 1.6;">السبت - الخميس: 9:00 ص - 10:00 م<br>الجمعة: 2:00 م - 10:00 م</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 style="font-size: 24px; margin-bottom: 20px; color: var(--dark-gray);">تابعنا على</h3>
+                        <div style="display: flex; gap: 15px;">
+                            <a href="#" style="width: 50px; height: 50px; border-radius: 50%; background: var(--primary-gold); display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; transition: var(--transition);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">📘</a>
+                            <a href="#" style="width: 50px; height: 50px; border-radius: 50%; background: var(--primary-gold); display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; transition: var(--transition);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">📷</a>
+                            <a href="#" style="width: 50px; height: 50px; border-radius: 50%; background: var(--primary-gold); display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; transition: var(--transition);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">🐦</a>
+                            <a href="#" style="width: 50px; height: 50px; border-radius: 50%; background: var(--primary-gold); display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; transition: var(--transition);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">📱</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 0; height: 500px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.3984739105!2d46.67233931500181!3d24.713552584127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2z2KfZhNix2YrYp9i2INin2YTYs9i52YjYr9mK2Kk!5e0!3m2!1sar!2ssa!4v1234567890123!5m2!1sar!2ssa" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <section style="padding: 100px 0; background: var(--light-gray);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">الأسئلة الشائعة</h2>
+                <p class="section-subtitle">إجابات سريعة لأكثر الأسئلة شيوعاً</p>
+            </div>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="accordion-item" style="margin-bottom: 20px; border: 1px solid #e0e0e0; border-radius: 10px; overflow: hidden;">
+                    <button class="accordion-header" style="width: 100%; padding: 25px 30px; background: var(--white); border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 18px; font-weight: 600; color: var(--dark-gray); text-align: right;">
+                        <span>كيف يمكنني تتبع طلبي؟</span>
+                        <span class="accordion-icon" style="font-size: 28px; color: var(--primary-gold);">+</span>
+                    </button>
+                    <div class="accordion-content" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease; background: var(--light-gray);">
+                        <p style="padding: 25px 30px; color: #666; line-height: 1.8;">سيتم إرسال رابط التتبع إلى بريدك الإلكتروني فور شحن الطلب. يمكنك أيضاً تتبع طلبك من خلال حسابك على الموقع.</p>
+                    </div>
+                </div>
+                <div class="accordion-item" style="margin-bottom: 20px; border: 1px solid #e0e0e0; border-radius: 10px; overflow: hidden;">
+                    <button class="accordion-header" style="width: 100%; padding: 25px 30px; background: var(--white); border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 18px; font-weight: 600; color: var(--dark-gray); text-align: right;">
+                        <span>ما هي طرق الدفع المتاحة؟</span>
+                        <span class="accordion-icon" style="font-size: 28px; color: var(--primary-gold);">+</span>
+                    </button>
+                    <div class="accordion-content" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease; background: var(--light-gray);">
+                        <p style="padding: 25px 30px; color: #666; line-height: 1.8;">نقبل الدفع عن طريق البطاقات الائتمانية (Visa, Mastercard)، مدى، Apple Pay، والدفع عند الاستلام.</p>
+                    </div>
+                </div>
+                <div class="accordion-item" style="margin-bottom: 20px; border: 1px solid #e0e0e0; border-radius: 10px; overflow: hidden;">
+                    <button class="accordion-header" style="width: 100%; padding: 25px 30px; background: var(--white); border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 18px; font-weight: 600; color: var(--dark-gray); text-align: right;">
+                        <span>هل تشحنون خارج السعودية؟</span>
+                        <span class="accordion-icon" style="font-size: 28px; color: var(--primary-gold);">+</span>
+                    </button>
+                    <div class="accordion-content" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease; background: var(--light-gray);">
+                        <p style="padding: 25px 30px; color: #666; line-height: 1.8;">نعم، نشحن إلى جميع دول الخليج العربي. تواصل معنا لمعرفة تكلفة الشحن ومدة التوصيل لبلدك.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LUXE PARFUM</h3>
+                    <p>عالم من العطور الفاخرة والأناقة الراقية</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">📱</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="products.html">المنتجات</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>خدمة العملاء</h4>
+                    <ul>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                        <li><a href="#">سياسة الاسترجاع</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li>📞 +966 50 123 4567</li>
+                        <li>✉️ info@luxeparfum.com</li>
+                        <li>📍 الرياض، المملكة العربية السعودية</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LUXE PARFUM. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

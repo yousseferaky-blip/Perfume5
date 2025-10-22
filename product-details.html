@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل المنتج - LUXE PARFUM</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="product-details.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>LUXE PARFUM</h1>
+                    <span class="logo-subtitle">Maison de Parfum</span>
+                </div>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+                        <li><a href="products.html" class="nav-link">المنتجات</a></li>
+                        <li><a href="index.html#categories" class="nav-link">الفئات</a></li>
+                        <li><a href="about.html" class="nav-link">من نحن</a></li>
+                        <li><a href="contact.html" class="nav-link">تواصل معنا</a></li>
+                        <li><a href="login.html" class="nav-link">تسجيل الدخول</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="lang-toggle" id="langToggle">EN</button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="product-details-page">
+        <div class="container">
+            <div class="product-details-container">
+                <div class="product-gallery">
+                    <div class="main-image" id="mainProductImage" style="background: url('https://images.unsplash.com/photo-1541643600914-78b084683601?w=800') center/cover;"></div>
+                    <div class="thumbnail-gallery">
+                        <div class="thumbnail active" onclick="changeProductImage('https://images.unsplash.com/photo-1541643600914-78b084683601?w=800')" style="background: url('https://images.unsplash.com/photo-1541643600914-78b084683601?w=200') center/cover;"></div>
+                        <div class="thumbnail" onclick="changeProductImage('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=800')" style="background: url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=200') center/cover;"></div>
+                        <div class="thumbnail" onclick="changeProductImage('https://images.unsplash.com/photo-1588405748880-12d1d2a59d75?w=800')" style="background: url('https://images.unsplash.com/photo-1588405748880-12d1d2a59d75?w=200') center/cover;"></div>
+                        <div class="thumbnail" onclick="changeProductImage('https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=800')" style="background: url('https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=200') center/cover;"></div>
+                    </div>
+                </div>
+
+                <div class="product-info">
+                    <div class="product-brand">LUXE PARFUM COLLECTION</div>
+                    <h1 class="product-title">Noir Élégance</h1>
+                    <div class="product-rating-section">
+                        <div class="rating-stars">★★★★★</div>
+                        <span class="rating-count">(248 تقييم)</span>
+                    </div>
+                    <div class="product-price-section">
+                        <div>
+                            <span class="discount-badge">خصم 20%</span>
+                            <span class="current-price">1,200 ر.س</span>
+                            <span class="original-price">1,500 ر.س</span>
+                        </div>
+                    </div>
+                    <p class="product-description">
+                        عطر Noir Élégance هو تحفة فنية من عالم العطور الفاخرة، يجمع بين الأناقة الكلاسيكية والحداثة العصرية.
+                    </p>
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label class="option-label">الحجم</label>
+                            <div class="size-options">
+                                <div class="size-option active">50 مل</div>
+                                <div class="size-option">100 مل</div>
+                                <div class="size-option">150 مل</div>
+                            </div>
+                        </div>
+                        <div class="option-group">
+                            <label class="option-label">الكمية</label>
+                            <div class="quantity-selector">
+                                <button class="quantity-btn quantity-minus">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1">
+                                <button class="quantity-btn quantity-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="add-to-cart-btn" onclick="addToCart('Noir Élégance')">أضف إلى السلة</button>
+                        <button class="wishlist-btn">🤍 المفضلة</button>
+                    </div>
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">رمز المنتج:</span>
+                            <span class="meta-value">LP-NE-001</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">الفئة:</span>
+                            <span class="meta-value">عطور رجالية</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">التوفر:</span>
+                            <span class="meta-value" style="color: #27ae60; font-weight: 700;">متوفر في المخزون</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LUXE PARFUM</h3>
+                    <p>عالم من العطور الفاخرة والأناقة الراقية</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LUXE PARFUM. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+        
+        document.querySelectorAll('.thumbnail').forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+        document.querySelectorAll('.size-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.size-option').forEach(o => o.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
