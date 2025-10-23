@@ -1,3 +1,96 @@
+// Shopping Cart Management
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Update cart count in header
+function updateCartCount() {
+    const cartCount = document.getElementById('cartCount');
+    if (cartCount) {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCount.textContent = totalItems;
+    }
+}
+
+// Add product to cart
+function addToCartWithQuantity(productId, productName, productPrice, productImage, quantity = 1) {
+    const existingProduct = cart.find(item => item.id === productId);
+    
+    if (existingProduct) {
+        existingProduct.quantity += quantity;
+    } else {
+        cart.push({
+            id: productId,
+            name: productName,
+            price: productPrice,
+            image: productImage,
+            quantity: quantity
+        });
+    }
+    
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    showCartNotification(`تمت إضافة ${productName} إلى السلة (الكمية: ${quantity})`);
+}
+
+// Remove product from cart
+function removeFromCart(productId) {
+    cart = cart.filter(item => item.id !== productId);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+}
+
+// Update product quantity in cart
+function updateCartQuantity(productId, quantity) {
+    const product = cart.find(item => item.id === productId);
+    if (product) {
+        if (quantity <= 0) {
+            removeFromCart(productId);
+        } else {
+            product.quantity = quantity;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+        }
+    }
+}
+
+// Get cart total
+function getCartTotal() {
+    return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+}
+
+// Clear cart
+function clearCart() {
+    cart = [];
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+}
+
+// Show cart notification
+function showCartNotification(message) {
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: linear-gradient(135deg, #D4AF37, #B8960F);
+        color: #000;
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+        z-index: 10000;
+        font-weight: 600;
+        animation: slideInRight 0.5s ease;
+    `;
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.animation = 'slideOutRight 0.5s ease';
+        setTimeout(() => {
+            notification.remove();
+        }, 500);
+    }, 3000);
+}
+
 // Loading Screen
 window.addEventListener('load', () => {
     const loadingScreen = document.getElementById('loadingScreen');
@@ -10,6 +103,9 @@ window.addEventListener('load', () => {
             loadingScreen.style.display = 'none';
         }, 500);
     }, 2000);
+    
+    // Update cart count on page load
+    updateCartCount();
 });
 
 // Theme Mode Functions

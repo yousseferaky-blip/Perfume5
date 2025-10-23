@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار نظام السلة - LUXE PARFUM</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .test-page {
+            min-height: 100vh;
+            padding: 150px 0 80px;
+            background: var(--bg-primary);
+        }
+
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .test-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .test-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .test-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .test-product {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+
+        .test-product-image {
+            width: 100%;
+            height: 250px;
+            border-radius: 15px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 20px;
+        }
+
+        .test-product-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .test-product-price {
+            font-size: 24px;
+            color: var(--primary-gold);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .test-quantity-selector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .test-quantity-btn {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--primary-gold);
+            background: transparent;
+            color: var(--primary-gold);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .test-quantity-btn:hover {
+            background: var(--primary-gold);
+            color: #000;
+        }
+
+        .test-quantity-display {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .test-add-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #D4AF37, #B8960F);
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .test-add-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+        }
+
+        .test-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .test-action-btn {
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #D4AF37, #B8960F);
+            color: #000;
+            border: none;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-gold);
+            border: 2px solid var(--primary-gold);
+        }
+
+        .btn-danger {
+            background: #ff4444;
+            color: white;
+            border: none;
+        }
+
+        .test-action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="./WhatsApp Image 2025-10-22 at 00.11.54_770256b7.jpg"/>
+                </div>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+                        <li><a href="products.html" class="nav-link">المنتجات</a></li>
+                        <li><a href="about.html" class="nav-link">من نحن</a></li>
+                        <li><a href="contact.html" class="nav-link">تواصل معنا</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="cart.html" class="cart-btn" id="cartBtn">
+                        🛒
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <div class="theme-selector">
+                        <button class="theme-main-btn" id="themeMainBtn" title="تغيير المظهر">
+                            <span class="theme-icon" id="currentThemeIcon">💻</span>
+                        </button>
+                        <div class="theme-dropdown" id="themeDropdown">
+                            <button class="theme-option" data-theme="dark">
+                                <span class="theme-icon">🌙</span>
+                                <span>الوضع الداكن</span>
+                            </button>
+                            <button class="theme-option" data-theme="light">
+                                <span class="theme-icon">☀️</span>
+                                <span>الوضع الفاتح</span>
+                            </button>
+                            <button class="theme-option" data-theme="device">
+                                <span class="theme-icon">💻</span>
+                                <span>وضع الجهاز</span>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="lang-toggle" id="langToggle">EN</button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="test-page">
+        <div class="test-container">
+            <div class="test-header">
+                <h1>🧪 اختبار نظام السلة</h1>
+                <p style="color: var(--text-secondary); font-size: 18px;">جرب إضافة المنتجات للسلة بكميات مختلفة</p>
+            </div>
+
+            <div class="test-products">
+                <!-- Product 1 -->
+                <div class="test-product">
+                    <div class="test-product-image" style="background-image: url('https://images.unsplash.com/photo-1541643600914-78b084683601?w=400')"></div>
+                    <div class="test-product-name">Noir Élégance</div>
+                    <div class="test-product-price">1,200 ر.س</div>
+                    <div class="test-quantity-selector">
+                        <button class="test-quantity-btn" onclick="changeQuantity('product1', -1)">-</button>
+                        <span class="test-quantity-display" id="qty-product1">1</span>
+                        <button class="test-quantity-btn" onclick="changeQuantity('product1', 1)">+</button>
+                    </div>
+                    <button class="test-add-btn" onclick="addTestProduct('product1', 'Noir Élégance', 1200, 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=400')">
+                        أضف إلى السلة
+                    </button>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="test-product">
+                    <div class="test-product-image" style="background-image: url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400')"></div>
+                    <div class="test-product-name">Rose Mystique</div>
+                    <div class="test-product-price">1,500 ر.س</div>
+                    <div class="test-quantity-selector">
+                        <button class="test-quantity-btn" onclick="changeQuantity('product2', -1)">-</button>
+                        <span class="test-quantity-display" id="qty-product2">1</span>
+                        <button class="test-quantity-btn" onclick="changeQuantity('product2', 1)">+</button>
+                    </div>
+                    <button class="test-add-btn" onclick="addTestProduct('product2', 'Rose Mystique', 1500, 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400')">
+                        أضف إلى السلة
+                    </button>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="test-product">
+                    <div class="test-product-image" style="background-image: url('https://images.unsplash.com/photo-1588405748880-12d1d2a59d75?w=400')"></div>
+                    <div class="test-product-name">Oud Royal</div>
+                    <div class="test-product-price">2,000 ر.س</div>
+                    <div class="test-quantity-selector">
+                        <button class="test-quantity-btn" onclick="changeQuantity('product3', -1)">-</button>
+                        <span class="test-quantity-display" id="qty-product3">1</span>
+                        <button class="test-quantity-btn" onclick="changeQuantity('product3', 1)">+</button>
+                    </div>
+                    <button class="test-add-btn" onclick="addTestProduct('product3', 'Oud Royal', 2000, 'https://images.unsplash.com/photo-1588405748880-12d1d2a59d75?w=400')">
+                        أضف إلى السلة
+                    </button>
+                </div>
+            </div>
+
+            <div class="test-actions">
+                <a href="cart.html" class="test-action-btn btn-primary">عرض السلة 🛒</a>
+                <button class="test-action-btn btn-secondary" onclick="showCartInfo()">معلومات السلة ℹ️</button>
+                <button class="test-action-btn btn-danger" onclick="clearTestCart()">مسح السلة 🗑️</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LUXE PARFUM</h3>
+                    <p>عالم من العطور الفاخرة والأناقة الراقية</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LUXE PARFUM. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Change quantity
+        function changeQuantity(productId, change) {
+            const qtyElement = document.getElementById('qty-' + productId);
+            let currentQty = parseInt(qtyElement.textContent);
+            currentQty = Math.max(1, currentQty + change);
+            qtyElement.textContent = currentQty;
+        }
+
+        // Add test product
+        function addTestProduct(productId, productName, productPrice, productImage) {
+            const quantity = parseInt(document.getElementById('qty-' + productId).textContent);
+            addToCartWithQuantity(productId, productName, productPrice, productImage, quantity);
+        }
+
+        // Show cart info
+        function showCartInfo() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = getCartTotal();
+            
+            alert(`📊 معلومات السلة:\n\n` +
+                  `عدد المنتجات: ${totalItems}\n` +
+                  `عدد الأصناف: ${cart.length}\n` +
+                  `المجموع: ${totalPrice.toLocaleString()} ر.س\n\n` +
+                  `المنتجات:\n` +
+                  cart.map(item => `- ${item.name} (${item.quantity}x)`).join('\n'));
+        }
+
+        // Clear test cart
+        function clearTestCart() {
+            if (confirm('هل أنت متأكد من مسح السلة؟')) {
+                clearCart();
+                alert('✅ تم مسح السلة بنجاح!');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خيارات الدفع - LUXE PARFUM</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .checkout-options-page {
+            min-height: 100vh;
+            padding: 150px 0 80px;
+            background: var(--bg-primary);
+        }
+
+        .checkout-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .checkout-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .checkout-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .checkout-header p {
+            color: var(--text-secondary);
+            font-size: 18px;
+        }
+
+        .order-summary-box {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 40px;
+        }
+
+        .order-summary-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--card-border);
+        }
+
+        .order-summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .order-summary-row span:first-child {
+            color: var(--text-secondary);
+        }
+
+        .order-summary-row span:last-child {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .order-total {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid var(--card-border);
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .order-total span:first-child {
+            color: var(--text-primary);
+        }
+
+        .order-total span:last-child {
+            color: var(--primary-gold);
+        }
+
+        .options-container {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .options-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .options-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        .option-card {
+            background: var(--bg-secondary);
+            border: 2px solid var(--card-border);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: block;
+        }
+
+        .option-card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .option-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .option-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .option-description {
+            color: var(--text-secondary);
+            text-align: center;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .back-to-cart {
+            display: block;
+            text-align: center;
+            color: var(--primary-gold);
+            text-decoration: none;
+            margin-top: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .back-to-cart:hover {
+            color: var(--dark-gold);
+        }
+
+        @media (max-width: 576px) {
+            .checkout-header h1 {
+                font-size: 32px;
+            }
+
+            .options-container {
+                padding: 25px;
+            }
+
+            .option-card {
+                padding: 20px;
+            }
+
+            .option-icon {
+                font-size: 36px;
+            }
+
+            .option-title {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="./WhatsApp Image 2025-10-22 at 00.11.54_770256b7.jpg"/>
+                </div>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+                        <li><a href="products.html" class="nav-link">المنتجات</a></li>
+                        <li><a href="about.html" class="nav-link">من نحن</a></li>
+                        <li><a href="contact.html" class="nav-link">تواصل معنا</a></li>
+                        <li><a href="login.html" class="nav-link">تسجيل الدخول</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="cart.html" class="cart-btn" id="cartBtn">
+                        🛒
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <div class="theme-selector">
+                        <button class="theme-main-btn" id="themeMainBtn" title="تغيير المظهر">
+                            <span class="theme-icon" id="currentThemeIcon">💻</span>
+                        </button>
+                        <div class="theme-dropdown" id="themeDropdown">
+                            <button class="theme-option" data-theme="dark">
+                                <span class="theme-icon">🌙</span>
+                                <span>الوضع الداكن</span>
+                            </button>
+                            <button class="theme-option" data-theme="light">
+                                <span class="theme-icon">☀️</span>
+                                <span>الوضع الفاتح</span>
+                            </button>
+                            <button class="theme-option" data-theme="device">
+                                <span class="theme-icon">💻</span>
+                                <span>وضع الجهاز</span>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="lang-toggle" id="langToggle">EN</button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="checkout-options-page">
+        <div class="checkout-container">
+            <div class="checkout-header">
+                <h1>إتمام الطلب</h1>
+                <p>اختر طريقة المتابعة</p>
+            </div>
+
+            <div class="order-summary-box" id="orderSummaryBox">
+                <!-- Order summary will be loaded here -->
+            </div>
+
+            <div class="options-container">
+                <h2 class="options-title">كيف تريد المتابعة؟</h2>
+                <p class="options-subtitle">اختر أحد الخيارات التالية لإتمام طلبك</p>
+
+                <a href="signin.html" class="option-card">
+                    <div class="option-icon">🔐</div>
+                    <h3 class="option-title">الدخول لحسابك</h3>
+                    <p class="option-description">إذا كان لديك حساب بالفعل، قم بتسجيل الدخول للمتابعة بسرعة</p>
+                </a>
+
+                <a href="signup.html" class="option-card">
+                    <div class="option-icon">📝</div>
+                    <h3 class="option-title">الاشتراك في الموقع</h3>
+                    <p class="option-description">أنشئ حساب جديد للحصول على مزايا حصرية وتتبع طلباتك</p>
+                </a>
+
+                <a href="guest-checkout.html" class="option-card">
+                    <div class="option-icon">🚀</div>
+                    <h3 class="option-title">استكمال الدفع بدون تسجيل حساب</h3>
+                    <p class="option-description">أكمل طلبك بسرعة دون الحاجة لإنشاء حساب</p>
+                </a>
+
+                <a href="cart.html" class="back-to-cart">← العودة إلى السلة</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LUXE PARFUM</h3>
+                    <p>عالم من العطور الفاخرة والأناقة الراقية</p>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="products.html">المنتجات</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LUXE PARFUM. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Display order summary
+        function displayOrderSummary() {
+            const orderSummaryBox = document.getElementById('orderSummaryBox');
+            
+            if (cart.length === 0) {
+                window.location.href = 'cart.html';
+                return;
+            }
+
+            const subtotal = getCartTotal();
+            const shipping = subtotal > 500 ? 0 : 50;
+            const total = subtotal + shipping;
+            const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+            orderSummaryBox.innerHTML = `
+                <h3 class="order-summary-title">ملخص الطلب</h3>
+                <div class="order-summary-row">
+                    <span>عدد المنتجات</span>
+                    <span>${itemCount} منتج</span>
+                </div>
+                <div class="order-summary-row">
+                    <span>المجموع الفرعي</span>
+                    <span>${subtotal.toLocaleString()} ر.س</span>
+                </div>
+                <div class="order-summary-row">
+                    <span>الشحن</span>
+                    <span>${shipping === 0 ? 'مجاني' : shipping + ' ر.س'}</span>
+                </div>
+                <div class="order-total">
+                    <span>المجموع الكلي</span>
+                    <span>${total.toLocaleString()} ر.س</span>
+                </div>
+            `;
+        }
+
+        // Display on page load
+        displayOrderSummary();
+    </script>
+</body>
+</html>

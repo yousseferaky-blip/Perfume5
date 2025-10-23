@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سلة التسوق - LUXE PARFUM</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .cart-page {
+            min-height: 100vh;
+            padding: 150px 0 80px;
+            background: var(--bg-primary);
+        }
+
+        .cart-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .cart-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .cart-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .cart-header p {
+            color: var(--text-secondary);
+            font-size: 18px;
+        }
+
+        .cart-content {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .cart-items {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 120px 1fr auto;
+            gap: 20px;
+            padding: 20px;
+            border-bottom: 1px solid var(--card-border);
+            align-items: center;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .cart-item-price {
+            font-size: 18px;
+            color: var(--primary-gold);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .quantity-btn {
+            width: 35px;
+            height: 35px;
+            border: 2px solid var(--primary-gold);
+            background: transparent;
+            color: var(--primary-gold);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 700;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quantity-btn:hover {
+            background: var(--primary-gold);
+            color: #000;
+        }
+
+        .quantity-display {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .cart-item-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-end;
+        }
+
+        .cart-item-total {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+        }
+
+        .remove-btn {
+            background: #ff4444;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .remove-btn:hover {
+            background: #cc0000;
+            transform: scale(1.05);
+        }
+
+        .cart-summary {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+
+        .summary-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--card-border);
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .summary-row span:first-child {
+            color: var(--text-secondary);
+        }
+
+        .summary-row span:last-child {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 2px solid var(--card-border);
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .summary-total span:first-child {
+            color: var(--text-primary);
+        }
+
+        .summary-total span:last-child {
+            color: var(--primary-gold);
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #D4AF37, #B8960F);
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: var(--transition);
+        }
+
+        .checkout-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+        }
+
+        .continue-shopping {
+            width: 100%;
+            padding: 15px;
+            background: transparent;
+            color: var(--primary-gold);
+            border: 2px solid var(--primary-gold);
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: var(--transition);
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+
+        .continue-shopping:hover {
+            background: var(--primary-gold);
+            color: #000;
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .empty-cart-icon {
+            font-size: 100px;
+            margin-bottom: 20px;
+        }
+
+        .empty-cart h2 {
+            font-size: 32px;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .empty-cart p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 968px) {
+            .cart-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cart-summary {
+                position: static;
+            }
+
+            .cart-item {
+                grid-template-columns: 100px 1fr;
+                gap: 15px;
+            }
+
+            .cart-item-actions {
+                grid-column: 1 / -1;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .cart-header h1 {
+                font-size: 32px;
+            }
+
+            .cart-item {
+                grid-template-columns: 80px 1fr;
+            }
+
+            .cart-item-image {
+                width: 80px;
+                height: 80px;
+            }
+
+            .cart-item-name {
+                font-size: 16px;
+            }
+
+            .cart-item-price {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="./WhatsApp Image 2025-10-22 at 00.11.54_770256b7.jpg"/>
+                </div>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+                        <li><a href="products.html" class="nav-link">المنتجات</a></li>
+                        <li><a href="about.html" class="nav-link">من نحن</a></li>
+                        <li><a href="contact.html" class="nav-link">تواصل معنا</a></li>
+                        <li><a href="login.html" class="nav-link">تسجيل الدخول</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="cart.html" class="cart-btn" id="cartBtn">
+                        🛒
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <div class="theme-selector">
+                        <button class="theme-main-btn" id="themeMainBtn" title="تغيير المظهر">
+                            <span class="theme-icon" id="currentThemeIcon">💻</span>
+                        </button>
+                        <div class="theme-dropdown" id="themeDropdown">
+                            <button class="theme-option" data-theme="dark">
+                                <span class="theme-icon">🌙</span>
+                                <span>الوضع الداكن</span>
+                            </button>
+                            <button class="theme-option" data-theme="light">
+                                <span class="theme-icon">☀️</span>
+                                <span>الوضع الفاتح</span>
+                            </button>
+                            <button class="theme-option" data-theme="device">
+                                <span class="theme-icon">💻</span>
+                                <span>وضع الجهاز</span>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="lang-toggle" id="langToggle">EN</button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="cart-page">
+        <div class="cart-container">
+            <div class="cart-header">
+                <h1>سلة التسوق</h1>
+                <p>راجع منتجاتك المختارة</p>
+            </div>
+
+            <div id="cartContentArea">
+                <!-- Cart items will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LUXE PARFUM</h3>
+                    <p>عالم من العطور الفاخرة والأناقة الراقية</p>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="products.html">المنتجات</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LUXE PARFUM. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Load and display cart items
+        function displayCart() {
+            const cartContentArea = document.getElementById('cartContentArea');
+            
+            if (cart.length === 0) {
+                cartContentArea.innerHTML = `
+                    <div class="empty-cart">
+                        <div class="empty-cart-icon">🛒</div>
+                        <h2>سلة التسوق فارغة</h2>
+                        <p>لم تقم بإضافة أي منتجات بعد</p>
+                        <a href="products.html" class="btn btn-primary" style="display: inline-block; padding: 15px 40px;">تسوق الآن</a>
+                    </div>
+                `;
+                return;
+            }
+
+            let cartItemsHTML = '';
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                cartItemsHTML += `
+                    <div class="cart-item" data-id="${item.id}">
+                        <div class="cart-item-image" style="background-image: url('${item.image}')"></div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">${item.price.toLocaleString()} ر.س</div>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" onclick="decreaseQuantity('${item.id}')">-</button>
+                                <span class="quantity-display">${item.quantity}</span>
+                                <button class="quantity-btn" onclick="increaseQuantity('${item.id}')">+</button>
+                            </div>
+                        </div>
+                        <div class="cart-item-actions">
+                            <div class="cart-item-total">${itemTotal.toLocaleString()} ر.س</div>
+                            <button class="remove-btn" onclick="removeItem('${item.id}')">حذف</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            const subtotal = getCartTotal();
+            const shipping = subtotal > 500 ? 0 : 50;
+            const total = subtotal + shipping;
+
+            cartContentArea.innerHTML = `
+                <div class="cart-content">
+                    <div class="cart-items">
+                        ${cartItemsHTML}
+                    </div>
+                    <div class="cart-summary">
+                        <h3 class="summary-title">ملخص الطلب</h3>
+                        <div class="summary-row">
+                            <span>المجموع الفرعي</span>
+                            <span>${subtotal.toLocaleString()} ر.س</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>الشحن</span>
+                            <span>${shipping === 0 ? 'مجاني' : shipping + ' ر.س'}</span>
+                        </div>
+                        ${shipping === 0 ? '' : '<p style="font-size: 14px; color: var(--text-secondary); margin-top: 10px;">شحن مجاني للطلبات فوق 500 ر.س</p>'}
+                        <div class="summary-total">
+                            <span>المجموع الكلي</span>
+                            <span>${total.toLocaleString()} ر.س</span>
+                        </div>
+                        <button class="checkout-btn" onclick="proceedToCheckout()">إتمام الطلب</button>
+                        <a href="products.html" class="continue-shopping">متابعة التسوق</a>
+                    </div>
+                </div>
+            `;
+        }
+
+        function increaseQuantity(productId) {
+            const product = cart.find(item => item.id === productId);
+            if (product) {
+                product.quantity++;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartCount();
+                displayCart();
+            }
+        }
+
+        function decreaseQuantity(productId) {
+            const product = cart.find(item => item.id === productId);
+            if (product && product.quantity > 1) {
+                product.quantity--;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartCount();
+                displayCart();
+            }
+        }
+
+        function removeItem(productId) {
+            if (confirm('هل أنت متأكد من حذف هذا المنتج؟')) {
+                removeFromCart(productId);
+                displayCart();
+            }
+        }
+
+        function proceedToCheckout() {
+            window.location.href = 'checkout-options.html';
+        }
+
+        // Display cart on page load
+        displayCart();
+    </script>
+</body>
+</html>

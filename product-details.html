@@ -26,6 +26,29 @@
                     </ul>
                 </nav>
                 <div class="header-actions">
+                    <a href="cart.html" class="cart-btn" id="cartBtn">
+                        🛒
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <div class="theme-selector">
+                        <button class="theme-main-btn" id="themeMainBtn" title="تغيير المظهر">
+                            <span class="theme-icon" id="currentThemeIcon">💻</span>
+                        </button>
+                        <div class="theme-dropdown" id="themeDropdown">
+                            <button class="theme-option" data-theme="dark">
+                                <span class="theme-icon">🌙</span>
+                                <span>الوضع الداكن</span>
+                            </button>
+                            <button class="theme-option" data-theme="light">
+                                <span class="theme-icon">☀️</span>
+                                <span>الوضع الفاتح</span>
+                            </button>
+                            <button class="theme-option" data-theme="device">
+                                <span class="theme-icon">💻</span>
+                                <span>وضع الجهاز</span>
+                            </button>
+                        </div>
+                    </div>
                     <button class="lang-toggle" id="langToggle">EN</button>
                     <button class="menu-toggle" id="menuToggle">
                         <span></span>
@@ -86,7 +109,7 @@
                         </div>
                     </div>
                     <div class="action-buttons">
-                        <button class="add-to-cart-btn" onclick="addToCart('Noir Élégance')">أضف إلى السلة</button>
+                        <button class="add-to-cart-btn" id="addToCartBtn">أضف إلى السلة</button>
                         <button class="wishlist-btn">🤍 المفضلة</button>
                     </div>
                     <div class="product-meta">
@@ -142,6 +165,17 @@
                 document.querySelectorAll('.size-option').forEach(o => o.classList.remove('active'));
                 this.classList.add('active');
             });
+        });
+
+        // Add to cart functionality
+        document.getElementById('addToCartBtn').addEventListener('click', function() {
+            const quantity = parseInt(document.querySelector('.quantity-input').value);
+            const productName = 'Noir Élégance';
+            const productPrice = 1200;
+            const productImage = 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=400';
+            const productId = 'product-1';
+            
+            addToCartWithQuantity(productId, productName, productPrice, productImage, quantity);
         });
     </script>
 </body>
